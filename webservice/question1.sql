@@ -1,0 +1,3 @@
+ALTER TABLE locations
+ADD lat DECIMAL(9,6) NULL,
+ADD lng DECIMAL(9,6) NULL;
