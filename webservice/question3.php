@@ -8,6 +8,7 @@ curl_setopt($curl, CURLOPT_URL, "https://geocode.xyz/16 RUE DU BASSIN D AUSTERLI
 
 // return the transfer as a string, also with setopt()
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 // curl_exec() executes the started curl session
 // $output contains the output string
