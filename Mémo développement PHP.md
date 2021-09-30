@@ -3,12 +3,48 @@
 ## Les Boucles 
 
 ```php
+for ($i = 0; $i < 10; $i++) {
+    echo $i;
+}
+// Affiche les nombres entiers de 0 à 9
+
+$j = 0;
+while ($j < 10) {
+    echo $j;
+    $j++;
+}
+// Affiche les nombres entiers de 0 à 9
+
 $pays = [
     'France' => 'Paris',
     'Allemagne' => 'Berlin',
     'Italie' => 'Rome',
 ];
+
+foreach ($pays as $capital) {
+    echo $capital . ' ';
+}
+// Affiche les capitales des pays du tableau
 ```
+
+#### La boucle For
+
+#### La boucle Foreach
+
+#### La boucle While
+
+```php
+$estUnMultipleDeTrois = false;
+
+while (!$estUnMultipleDeTrois) {
+    if (rand(0, 100) % 3 === 0) {
+        $estUnMultipleDeTrois = true;
+    }
+}
+
+```
+
+
 
 ## Les Tableaux
 
