@@ -63,7 +63,7 @@ class Point
     public function calculerDistance(Point $p) {
         return sqrt(
             ($this->getAbs() - $p->getAbs()) ^ 2 +
-            ($this->getOrd() - $p->getOrd() ^ 2)
+            ($this->getOrd() - $p->getOrd()) ^ 2
         );
     }
 
@@ -71,7 +71,10 @@ class Point
      * @param Point $p
      */
     public function calculerMilieu(Point $p) {
-
+        $xM = ($this->getAbs() + $p->getAbs()) / 2;
+        $yM = ($this->getOrd() + $p->getOrd()) / 2;
+        $milieu = new Point($xM,$yM);
+        return $milieu;
     }
 
     /**
