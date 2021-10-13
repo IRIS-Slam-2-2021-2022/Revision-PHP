@@ -45,12 +45,27 @@ class TroisPoints {
         $this->_troisieme = $p;
     }
 
-    public function sontAlignes() {
+    public function sontAlignes(): bool {
+        // A = $_premier;
+        // B = $_deuxieme;
+        // C = $_troisieme;
+
         //1) Calculer la distance AC
-        //2) Calculer la distance BC
-        //3) Calculer la distance AB
-        //4) Tester si AB == AC + BC et stocker le resultat dans une variable $premierTest
-        //5) ...
-        //END) return $premierTest && $deuxiemeTest && troisiemeTest
+        $distanceAC = $this->getPremier()->calculerDistance($this->getTroiseme());
+        //2) Calculer la distance AB
+        $premier = $this->getPremier();
+        $deuxieme = $this->getDeuxieme();
+        $distanceAB = $premier->calculerDistance($deuxieme);
+        // OU
+        $distanceAB = $this->getPremier()->calculerDistance($this->getDeuxieme());
+        //3) Calculer la distance BC
+        $distanceBC = $this->getDeuxieme()->calculerDistance($this->getTroiseme());
+
+        // && == AND
+        // || == OR
+
+        return ($distanceAB === $distanceAC + $distanceBC) ||
+            ($distanceAC === $distanceAB + $distanceBC) ||
+            ($distanceBC === $distanceAC + $distanceAB);
     }
 }

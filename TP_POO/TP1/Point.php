@@ -60,10 +60,10 @@ class Point
     /**
      * @param Point $p
      */
-    public function calculerDistance(Point $p) {
+    public function calculerDistance(Point $p): float {
         return sqrt(
-            ($this->getAbs() - $p->getAbs()) ^ 2 +
-            ($this->getOrd() - $p->getOrd()) ^ 2
+            pow(($this->getAbs() - $p->getAbs()), 2) +
+            pow(($this->getOrd() - $p->getOrd()), 2)
         );
     }
 
