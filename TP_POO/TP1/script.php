@@ -9,13 +9,29 @@ $p1 = new Point(1, 2);
 $p2 = new Point (5, 6);
 $p3 = new Point (10, 12);
 
-echo $p1->calculerDistance($p2), PHP_EOL;
+echo 'Distance entre $p1 et $p2 : ', $p1->calculerDistance($p2), PHP_EOL;
 
-echo $p1->calculerMilieu($p2), PHP_EOL;
+echo 'Milieu du segment [$p1:$p2] : ', $p1->calculerMilieu($p2), PHP_EOL;
 
-$p1a = new Point(5, 1);
+$p1a = new Point(0, 5);
 $p2a = new Point(5, 10);
-$p3a = new Point(5, 20);
+$p3a = new Point(0, 10);
 
 $troisPoint = new TroisPoints($p1a, $p2a, $p3a);
-var_dump($troisPoint->sontAlignes());
+if ($troisPoint->sontAlignes()) {
+    echo 'Les trois points sont alignés !', PHP_EOL;
+} else {
+    echo 'Les trois points ne sont pas alignés !', PHP_EOL;
+}
+
+if ($troisPoint->estIsocele()) {
+    echo "Le triangle est isocèle", PHP_EOL;
+} else {
+    echo "Le triangle n'est pas isocèle", PHP_EOL;
+}
+
+if ($troisPoint->estEquilateral()) {
+    echo 'Le triangle est equilatéral', PHP_EOL;
+} else {
+    echo 'Le triangle n\'est pas equilatéral', PHP_EOL;
+}

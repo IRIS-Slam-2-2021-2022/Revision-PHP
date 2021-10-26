@@ -68,4 +68,38 @@ class TroisPoints {
             ($distanceAC === $distanceAB + $distanceBC) ||
             ($distanceBC === $distanceAC + $distanceAB);
     }
+
+    public function estIsocele(): bool {
+        // A = $_premier;
+        // B = $_deuxieme;
+        // C = $_troisieme;
+
+        //1) Calculer la distance AC
+        $distanceAC = $this->getPremier()->calculerDistance($this->getTroiseme());
+        //2) Calculer la distance AB
+        $distanceAB = $this->getPremier()->calculerDistance($this->getDeuxieme());
+        //3) Calculer la distance BC
+        $distanceBC = $this->getDeuxieme()->calculerDistance($this->getTroiseme());
+
+        return ($distanceAB === $distanceAC) ||
+            ($distanceAB === $distanceBC) ||
+            ($distanceBC === $distanceAC);
+    }
+
+    public function estEquilateral(): bool {
+        // A = $_premier;
+        // B = $_deuxieme;
+        // C = $_troisieme;
+
+        //1) Calculer la distance AC
+        $distanceAC = $this->getPremier()->calculerDistance($this->getTroiseme());
+        //2) Calculer la distance AB
+        $distanceAB = $this->getPremier()->calculerDistance($this->getDeuxieme());
+        //3) Calculer la distance BC
+        $distanceBC = $this->getDeuxieme()->calculerDistance($this->getTroiseme());
+
+        return ($distanceAC === $distanceBC) &&
+            ($distanceAC === $distanceAB) &&
+            ($distanceBC === $distanceAB);
+    }
 }

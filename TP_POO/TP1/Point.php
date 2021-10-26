@@ -56,9 +56,17 @@ class Point
         $this->_ord = $ord;
     }
 
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return '('. $this->_abs .', '. $this->_ord .')';
+    }
 
     /**
      * @param Point $p
+     * @return float
      */
     public function calculerDistance(Point $p): float {
         return sqrt(
@@ -69,19 +77,14 @@ class Point
 
     /**
      * @param Point $p
+     * @return Point
      */
-    public function calculerMilieu(Point $p) {
+    public function calculerMilieu(Point $p): Point {
         $xM = ($this->getAbs() + $p->getAbs()) / 2;
         $yM = ($this->getOrd() + $p->getOrd()) / 2;
-        $milieu = new Point($xM,$yM);
+        $milieu = new Point($xM, $yM);
+        // Possible egalement
+        // $milieu = new Point(($this->getAbs() + $p->getAbs()) / 2, ($this->getOrd() + $p->getOrd()) / 2);
         return $milieu;
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return '(' . $this->_abs . ', ' . $this->_ord . ')';
     }
 }
